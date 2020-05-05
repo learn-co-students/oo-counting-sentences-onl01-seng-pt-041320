@@ -3,23 +3,35 @@ require 'pry'
 class String
 
   def sentence?
-   if sentence?.end_with?(".")
-     return true 
+   if self.end_with?(".")
+     true 
    else
-     return false 
+     false 
+     end
+     
    end
     
-  end
 
   def question?
+    if self.end_with?("?")
+      true
+    else
+      false 
+    end
 
   end
 
   def exclamation?
-
+    if self.end_with?("!")
+      true 
+    else 
+      false
+    end 
   end
 
   def count_sentences
-
+   if  self.split("." "?" "!").each |sentence| 
+     self.count 
+   end 
   end
 end
